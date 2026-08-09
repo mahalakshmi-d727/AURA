@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"><meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="AURA - AI Augmented Reality Assistant"
+>
+
+<title>AURA — AI Augmented Reality Assistant</title>
+
+</head><body><div id="app">
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                ✦
+            </div>
+
+            <div>
+                <h1>AURA</h1>
+                <span>AI AUGMENTED REALITY</span>
+            </div>
+
+        </div>
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            <span id="systemStatus">
+                SYSTEM READY
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <main class="ar-container">
+
+        <video
+            id="camera"
+            autoplay
+            muted
+            playsinline
+        ></video>
+
+        <canvas id="arCanvas"></canvas>
+
+
+        <div
+            class="welcome"
+            id="welcome"
+        >
+
+            <div class="welcome-icon">
+                ✦
+            </div>
+
+            <h2>
+                Bring your imagination to life.
+            </h2>
+
+            <p>
+                Say what you want to see.
+            </p>
+
+            <div class="example-command">
+                “Show me the Earth”
+            </div>
+
+        </div>
+
+
+        <aside
+            class="object-info"
+            id="objectInfo"
+        >
+
+            <div class="info-label">
+                OBJECT
+            </div>
+
+            <h2 id="objectName">
+                —
+            </h2>
+
+            <p id="objectDescription">
+                No object detected.
+            </p>
+
+        </aside>
+
+
+        <div
+            class="gesture-indicator"
+            id="gestureIndicator"
+        >
+
+            <span class="gesture-icon">
+                ✋
+            </span>
+
+            <div>
+
+                <small>GESTURE</small>
+
+                <strong id="gestureName">
+                    WAITING
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="voice-panel">
+
+            <button
+                id="voiceButton"
+                class="voice-button"
+                aria-label="Start voice command"
+            >
+                🎤
+            </button>
+
+            <div class="voice-text">
+
+                <span>
+                    VOICE COMMAND
+                </span>
+
+                <strong id="voiceText">
+                    Say something...
+                </strong>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="statusbar">
+
+        <div class="status-item">
+
+            <span class="status-label">
+                HAND
+            </span>
+
+            <span
+                id="handStatus"
+                class="status-value"
+            >
+                SEARCHING
+            </span>
+
+        </div>
+
+
+        <div class="status-item">
+
+            <span class="status-label">
+                OBJECT
+            </span>
+
+            <span
+                id="objectStatus"
+                class="status-value"
+            >
+                NONE
+            </span>
+
+        </div>
+
+
+        <div class="status-item">
+
+            <span class="status-label">
+                GESTURE
+            </span>
+
+            <span
+                id="gestureStatus"
+                class="status-value"
+            >
+                WAITING
+            </span>
+
+        </div>
+
+
+        <div class="status-item">
+
+            <span class="status-label">
+                AI
+            </span>
+
+            <span
+                id="aiStatus"
+                class="status-value"
+            >
+                READY
+            </span>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<script
+    type="module"
+    src="/src/main.js"
+></script>
+
+</body></html>

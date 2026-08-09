@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+--background: #05070b;
+--surface: rgba(15, 18, 27, 0.82);
+--surface-light: rgba(255, 255, 255, 0.06);
+
+--text: #f5f7fb;
+--muted: #8c94a7;
+
+--accent: #7c5cff;
+--accent-light: #9d8aff;
+
+--success: #43e6a3;
+
+--border: rgba(255, 255, 255, 0.09);
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+body {
+background: var(--background);
+color: var(--text);
+
+font-family:
+    Inter,
+    system-ui,
+    sans-serif;
+
+overflow: hidden;
+
+}
+
+#app {
+height: 100vh;
+
+display: flex;
+flex-direction: column;
+
+}
+
+/* ================= HEADER ================= */
+
+.topbar {
+height: 76px;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+padding: 0 28px;
+
+border-bottom:
+    1px solid var(--border);
+
+background:
+    rgba(5, 7, 11, 0.86);
+
+backdrop-filter:
+    blur(20px);
+
+z-index: 10;
+
+}
+
+.brand {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.brand-mark {
+width: 38px;
+height: 38px;
+
+display: grid;
+place-items: center;
+
+border-radius: 12px;
+
+background:
+    linear-gradient(
+        135deg,
+        var(--accent),
+        #4d8dff
+    );
+
+font-size: 20px;
+
+box-shadow:
+    0 0 25px
+    rgba(124, 92, 255, 0.35);
+
+}
+
+.brand h1 {
+font-size: 18px;
+font-weight: 800;
+letter-spacing: 0.12em;
+}
+
+.brand span {
+display: block;
+
+margin-top: 2px;
+
+font-size: 8px;
+font-weight: 600;
+letter-spacing: 0.18em;
+
+color: var(--muted);
+
+}
+
+.system-status {
+display: flex;
+align-items: center;
+gap: 8px;
+
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.12em;
+
+color: var(--muted);
+
+}
+
+.status-dot {
+width: 7px;
+height: 7px;
+
+border-radius: 50%;
+
+background: var(--success);
+
+box-shadow:
+    0 0 12px
+    var(--success);
+
+}
+
+/* ================= AR AREA ================= */
+
+.ar-container {
+position: relative;
+
+flex: 1;
+
+overflow: hidden;
+
+background:
+    radial-gradient(
+        circle at center,
+        rgba(124, 92, 255, 0.08),
+        transparent 50%
+    );
+
+}
+
+#camera {
+position: absolute;
+
+inset: 0;
+
+width: 100%;
+height: 100%;
+
+object-fit: cover;
+
+transform: scaleX(-1);
+
+}
+
+#arCanvas {
+position: absolute;
+
+inset: 0;
+
+width: 100%;
+height: 100%;
+
+pointer-events: none;
+
+}
+
+/* ================= WELCOME ================= */
+
+.welcome {
+position: absolute;
+
+top: 50%;
+left: 50%;
+
+transform:
+    translate(-50%, -50%);
+
+text-align: center;
+
+pointer-events: none;
+
+}
+
+.welcome-icon {
+font-size: 38px;
+
+margin-bottom: 18px;
+
+color: var(--accent-light);
+
+text-shadow:
+    0 0 30px
+    rgba(124, 92, 255, 0.7);
+
+}
+
+.welcome h2 {
+font-size: 22px;
+font-weight: 600;
+}
+
+.welcome p {
+margin-top: 8px;
+
+color: var(--muted);
+
+font-size: 13px;
+
+}
+
+.example-command {
+display: inline-block;
+
+margin-top: 20px;
+
+padding: 10px 16px;
+
+border:
+    1px solid var(--border);
+
+border-radius: 999px;
+
+background:
+    rgba(255, 255, 255, 0.04);
+
+color: #c8cce0;
+
+font-size: 12px;
+
+}
+
+/* ================= OBJECT INFO ================= */
+
+.object-info {
+position: absolute;
+
+top: 24px;
+right: 24px;
+
+width: 240px;
+
+padding: 18px;
+
+border:
+    1px solid var(--border);
+
+border-radius: 16px;
+
+background:
+    rgba(8, 10, 16, 0.75);
+
+backdrop-filter:
+    blur(20px);
+
+}
+
+.info-label {
+font-size: 8px;
+
+font-weight: 700;
+
+letter-spacing: 0.16em;
+
+color: var(--accent-light);
+
+}
+
+.object-info h2 {
+margin-top: 7px;
+
+font-size: 20px;
+
+}
+
+.object-info p {
+margin-top: 7px;
+
+font-size: 11px;
+
+line-height: 1.6;
+
+color: var(--muted);
+
+}
+
+/* ================= GESTURE ================= */
+
+.gesture-indicator {
+position: absolute;
+
+top: 24px;
+left: 24px;
+
+display: flex;
+
+align-items: center;
+
+gap: 12px;
+
+padding: 12px 16px;
+
+border:
+    1px solid var(--border);
+
+border-radius: 14px;
+
+background:
+    rgba(8, 10, 16, 0.75);
+
+backdrop-filter:
+    blur(20px);
+
+}
+
+.gesture-icon {
+font-size: 24px;
+}
+
+.gesture-indicator small {
+display: block;
+
+font-size: 7px;
+
+color: var(--muted);
+
+letter-spacing: 0.15em;
+
+}
+
+.gesture-indicator strong {
+display: block;
+
+margin-top: 3px;
+
+font-size: 10px;
+
+}
+
+/* ================= VOICE ================= */
+
+.voice-panel {
+position: absolute;
+
+bottom: 30px;
+left: 50%;
+
+transform:
+    translateX(-50%);
+
+display: flex;
+
+align-items: center;
+
+gap: 14px;
+
+padding: 10px 18px 10px 10px;
+
+min-width: 310px;
+
+border:
+    1px solid var(--border);
+
+border-radius: 999px;
+
+background:
+    rgba(8, 10, 16, 0.86);
+
+backdrop-filter:
+    blur(20px);
+
+}
+
+.voice-button {
+width: 46px;
+height: 46px;
+
+border: none;
+
+border-radius: 50%;
+
+cursor: pointer;
+
+background:
+    linear-gradient(
+        135deg,
+        var(--accent),
+        #4d8dff
+    );
+
+color: white;
+
+font-size: 18px;
+
+box-shadow:
+    0 0 25px
+    rgba(124, 92, 255, 0.35);
+
+transition:
+    transform 0.2s ease;
+
+}
+
+.voice-button:hover {
+transform: scale(1.07);
+}
+
+.voice-text span {
+display: block;
+
+font-size: 7px;
+
+letter-spacing: 0.15em;
+
+color: var(--muted);
+
+}
+
+.voice-text strong {
+display: block;
+
+margin-top: 4px;
+
+font-size: 11px;
+
+}
+
+/* ================= FOOTER ================= */
+
+.statusbar {
+height: 48px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 42px;
+
+border-top:
+    1px solid var(--border);
+
+background:
+    rgba(5, 7, 11, 0.9);
+
+}
+
+.status-item {
+display: flex;
+
+gap: 8px;
+
+font-size: 8px;
+
+letter-spacing: 0.12em;
+
+}
+
+.status-label {
+color: var(--muted);
+}
+
+.status-value {
+color: var(--success);
+
+font-weight: 700;
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+.topbar {
+padding: 0 16px;
+}
+
+.object-info {
+    display: none;
+}
+
+.statusbar {
+    gap: 12px;
+
+    justify-content:
+        space-around;
+}
+
+.status-item {
+    flex-direction: column;
+
+    gap: 2px;
+
+    align-items: center;
+}
+
+}
