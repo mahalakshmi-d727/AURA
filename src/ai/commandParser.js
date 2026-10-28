@@ -18,6 +18,7 @@ HIDE IT
 ========================================================= */
 
 export function parseCommand(command) {
+    console.log("🤖 CommandParser Input:", command);
 
     const text =
         command
@@ -298,7 +299,8 @@ export function parseCommand(command) {
         text.includes("move left") ||
         text.includes("go left") ||
         text.includes("shift left") ||
-        text.includes("put it left")
+        text.includes("put it left") ||
+        (text.includes("move") && text.includes("left"))
     ) {
 
         return {
@@ -325,7 +327,8 @@ export function parseCommand(command) {
         text.includes("move right") ||
         text.includes("go right") ||
         text.includes("shift right") ||
-        text.includes("put it right")
+        text.includes("put it right") ||
+        (text.includes("move") && text.includes("right"))
     ) {
 
         return {
@@ -352,7 +355,8 @@ export function parseCommand(command) {
         text.includes("move up") ||
         text.includes("go up") ||
         text.includes("shift up") ||
-        text.includes("put it up")
+        text.includes("put it up") ||
+        (text.includes("move") && text.includes("up"))
     ) {
 
         return {
@@ -379,7 +383,8 @@ export function parseCommand(command) {
         text.includes("move down") ||
         text.includes("go down") ||
         text.includes("shift down") ||
-        text.includes("put it down")
+        text.includes("put it down") ||
+        (text.includes("move") && text.includes("down"))
     ) {
 
         return {
@@ -488,3 +493,29 @@ export function parseCommand(command) {
     };
 
 }
+console.log("🤖 CommandParser Test:");
+
+console.log(
+    "SHOW EARTH →",
+    JSON.stringify(parseCommand("show earth"))
+);
+
+console.log(
+    "MAKE IT BIGGER →",
+    JSON.stringify(parseCommand("make it bigger"))
+);
+
+console.log(
+    "MOVE EARTH LEFT →",
+    JSON.stringify(parseCommand("move earth left"))
+);
+
+console.log(
+    "ROTATE EARTH →",
+    JSON.stringify(parseCommand("rotate earth"))
+);
+
+console.log(
+    "HIDE IT →",
+    JSON.stringify(parseCommand("hide it"))
+);

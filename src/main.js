@@ -605,7 +605,9 @@ async function startHandTracking() {
 
 
                             console.log(
-                                "🤲 TWO-HAND CONTROL ACTIVE"
+                                "🤲 TWO-HAND CONTROL ACTIVE" +
+                                hands.length +
+                                " HANDS DETECTED"
                             );
 
                         }
@@ -618,6 +620,9 @@ async function startHandTracking() {
                         else if (
                             hands.length === 1
                         ) {
+                            console.log(
+                                "🖐️ SINGLE-HAND TRACKING ACTIVE — 1 HAND DETECTED"
+                            );
 
                             const landmarks =
                                 hands[0];

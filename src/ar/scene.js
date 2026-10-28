@@ -23,6 +23,7 @@ CREATE AR SCENE
 ========================================================= */
 
 export function createARScene(canvas) {
+    console.log("🟡 createARScene() called");
 
     scene =
         new THREE.Scene();
@@ -64,7 +65,7 @@ export function createARScene(canvas) {
 
         });
 
-
+        console.log("🎨 Three.js WebGL renderer created");
     renderer.setPixelRatio(
         Math.min(
             window.devicePixelRatio,

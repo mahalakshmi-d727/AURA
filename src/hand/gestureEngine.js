@@ -60,12 +60,16 @@ return tip.y < pip.y;
 export function detectGesture(
 landmarks
 ) {
+    console.log(
+    "🧠 Gesture detection started"
+);
 
 if (
     !landmarks ||
     landmarks.length !== 21
 ) {
-
+    console.log(
+    "Gesture → WAITING");
     return "WAITING";
 
 }
@@ -81,7 +85,8 @@ const pinchDistance =
 
 
 if (pinchDistance < 0.07) {
-
+    console.log(
+    "Gesture → PINCH");
     return "PINCH";
 
 }
@@ -129,7 +134,8 @@ if (
     ringExtended &&
     pinkyExtended
 ) {
-
+    console.log(
+    "Gesture → OPEN PALM");
     return "OPEN PALM";
 
 }
@@ -143,7 +149,8 @@ if (
     !ringExtended &&
     !pinkyExtended
 ) {
-
+    console.log(
+    "Gesture → POINT");
     return "POINT";
 
 }
@@ -157,12 +164,16 @@ if (
     !ringExtended &&
     !pinkyExtended
 ) {
-
+    console.log(
+    "Gesture → FIST"
+    );
     return "FIST";
 
 }
 
-
+console.log(
+    "Gesture → UNKNOWN"
+);
 return "UNKNOWN";
 
 }

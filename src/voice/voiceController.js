@@ -129,7 +129,9 @@ export function startListening() {
         return;
 
     }
-
+    console.log(
+    "Starting microphone listening..."
+    );
     recognition.start();
 
 }

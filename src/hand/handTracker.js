@@ -12,6 +12,10 @@ CREATE HAND LANDMARKER
 ========================================================= */
 
 export async function createHandTracker() {
+    console.log(
+    "🟡createHandTracker() called"
+);
+    
 
     try {
 
@@ -54,10 +58,14 @@ export async function createHandTracker() {
             );
 
 
+        
         console.log(
-            "✋ MediaPipe TWO-HAND tracker ready"
+            "✋  MediaPipe HandLandmarker READY"
         );
 
+        console.log(
+            "👥  Maximum hands supported = 2"
+        );
 
         return handLandmarker;
 
